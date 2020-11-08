@@ -1,0 +1,211 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+/* header Navigation Bar */
+.headNav{
+    display: flex;
+    height: 75px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 0 10px 0;
+    position: fixed;
+    background-color: white;
+    z-index: 11;
+    overflow: hidden;
+}
+
+/* hamburger menu */
+.hamburgerMenu{
+    flex: 1;
+    margin-left: 5%;
+    text-align: left;
+    cursor: pointer;
+    display: none;
+}
+
+.hamburgerMenu i:hover{
+    color: rgb(8, 159, 246);
+}
+
+
+/* logo */
+.headNav h2{
+    flex: 2;
+    margin-top: 6px;
+    cursor: pointer;
+}
+
+/* search bar */
+.headNav .search-container{
+    flex: 2;
+    text-align: left;
+
+}
+
+.headNav input[type=text] {
+    padding: 6px;
+    font-size: 17px;
+    border: 1px solid rgb(141, 138, 138);
+    border-radius: 7px;
+    width: 80%;
+   
+  }
+  
+  .headNav .search-container button {
+    padding: 6px 10px;
+    
+    
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+  
+  .headNav .search-container button:hover {
+    background: #ccc;
+  }
+
+
+
+/* side navigation links */
+#sideBar{
+    
+    top: 75px;
+    margin-bottom: 30px;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    width: 215px;
+    background-color: white;
+    z-index: 10;    
+    
+}
+
+#sideBar ul {
+    padding-top: 10px;
+    padding-left: 10px;
+    
+}
+
+#sideBar ul li{
+     text-align: left;  
+}
+
+#sideBar ul li a{
+    font-size: 20px;
+    padding: 20px;
+    text-decoration: none;
+    color: rgb(41, 38, 38);
+    display: block;
+    border-radius: 10px;
+}
+
+#sideBar ul li a:hover{
+    background-color: rgb(212, 228, 236);
+    color: rgb(8, 159, 246);
+}
+
+
+/* main content */
+.mainContent{
+    top: 150px;
+    left: 300px;
+    position: relative;
+    width: 65rem;
+    overflow: hidden;
+    
+    /* height: auto;
+    border: 3px solid black; */
+    
+}
+
+.card{
+    margin-bottom: 55px;
+    width: 65rem;
+}
+
+
+
+/* side content - weather mainly */
+.sideContent{
+    position: fixed;
+    overflow: hidden;
+    width: 42rem;
+    height: auto;
+    
+    z-index: 3;
+    top: 150px;
+    right: 10%;
+
+}
+
+/* responsiveness when screen size is less than 1920 */
+@media only screen and (max-width: 1900px){
+    
+
+    .mainContent{
+        left: 275px;
+    }
+
+    
+}
+
+
+@media only screen and (max-width: 1840px){
+    
+    .mainContent{
+        left:310px;
+        width: 75%;
+        
+    }
+
+    .card{
+        width: 100%;
+    }
+
+    .sideContent{
+        position: relative;
+        left: 310px;
+        top: 150px;
+        width: 75%;
+        z-index: 1;
+    }
+}
+
+@media only screen and (max-width: 1733px){
+    .hamburgerMenu{
+        display: inline-block;
+    }
+
+    #sideBar{
+        transform: translateX(-300px);
+    }
+
+    #sideBar.open{
+        transform: translateX(0);
+    }
+    .mainContent{
+        position: relative;
+        left: 0;
+        margin: auto;
+        width: 94%;
+    }
+
+    .sideContent{
+        position: relative;
+        left: 0;
+        margin: auto;
+        width: 94%;
+    }
+}
